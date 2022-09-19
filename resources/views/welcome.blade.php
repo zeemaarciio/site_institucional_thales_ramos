@@ -22,8 +22,8 @@
     <!--<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/ladda-themeless.min.css') }}"> -->
 
 
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Ladda/1.0.6/ladda-themeless.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Ladda/1.0.6/ladda-themeless.min.css">
 
     <link href="{{ asset('public/assets/css/style.css') }}" rel="stylesheet">
 
@@ -94,7 +94,7 @@
         <div class="container-fluid py-5" id="professionals">
             <div class="container">
                 <div class="position-relative d-flex align-items-center justify-content-center">
-                    <h1 class="display-1 text-uppercase text-white profissionais" style="-webkit-text-stroke:1px #dee2e6;">
+                    <h1 class="display-1 text-uppercase text-white profissionais" style="-webkit-text-stroke:6px #AA2C42;">
                         Profissionais
                     </h1>
                 </div>
@@ -117,7 +117,7 @@
         <div class="container-fluid pt-5" id="service">
             <div class="container">
                 <div class="service-h4 position-relative d-flex align-items-center justify-content-center">
-                    <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6; font-size: 80px;">Serviços</h1>
+                    <h1 class="display-1 text-uppercase text-white servicos" style="-webkit-text-stroke: 6px #AA2C42; font-size: 80px;">Serviços</h1>
                 </div>
                 <div class="row pb-3">
                     <div class="service-box col-lg-4 col-md-6 text-center mb-5">
@@ -151,7 +151,7 @@
         <div class="container-fluid py-5" id="testimonial">
             <div class="container">
                 <div class="position-relative d-flex align-items-center justify-content-center">
-                    <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6; font-size: 80px;">Clientes</h1>
+                    <h1 class="display-1 text-uppercase text-white clientes" style="-webkit-text-stroke: 6px #AA2C42; font-size: 80px;">Clientes</h1>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-9">
@@ -190,7 +190,7 @@
         <div class="container-fluid py-5" id="contact">
             <div class="container">
                 <div class="position-relative d-flex align-items-center justify-content-center">
-                    <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6; font-size: 80px;">Contato</h1>
+                    <h1 class="display-1 text-uppercase text-white contato_titulo" style="-webkit-text-stroke: 6px #AA2C42; font-size: 80px;">Contato</h1>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
@@ -209,6 +209,12 @@
                                 </button>
                             </div>
                             @endif
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>Preencha os dados corretamente!</strong>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
 
                             @if($message = Session::get('success'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -247,15 +253,15 @@
                                     <textarea class="form-control py-3 px-4" rows="5" id="message" name="message" placeholder="Mensagem" required></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
-                                <div class="control-group">
+                                <!--<div class="control-group">
                                     <button class="form-control btn btn-outline-success btn-enviar" type="submit" id="btn-enviar" style="padding: 0;"><i class="fas fa-paper-plane"></i> Enviar Mensagem</button>
-                                </div>
-                                <!-- <div class="control-group">
+                                </div> -->
+                                <div class="control-group">
                                     <button type="button" class="form-control btn btn-outline-success btn-enviar ladda-button" style="padding: 0;" data-spinner-color="green" data-style="zoom-in"><span class="ladda-label">
                                     <i class="fas fa-paper-plane"></i> Enviar Mensagem
                                         </span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div>
                                     </button>
-                                </div> -->
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -277,30 +283,31 @@
 
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script> -->
         <script src="{{ asset('public/assets/libs/easing/easing.min.js') }}"></script>
         <script src="{{ asset('public/assets/libs/waypoints/waypoints.min.js') }}"></script>
         <script src="{{ asset('public/assets/libs/owlcarousel/owl.carousel.min.js') }}"></script>
         <script src="{{ asset('public/assets/libs/isotope/isotope.pkgd.min.js') }}"></script>
         <script src="{{ asset('public/assets/libs/lightbox/js/lightbox.min.js') }}"></script>
-        <!-- <script src="{{ asset('assets/js/ladda.min.js') }}"></script>
-        <script src="{{ asset('assets/js/spin.min.js') }}"></script> f -->
+        <!--<script src="{{ asset('public/assets/js/ladda.min.js') }}"></script>
+        <script src="{{ asset('public/assets/js/spin.min.js') }}"></script> -->
 
 
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Ladda/1.0.6/spin.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Ladda/1.0.6/ladda.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Ladda/1.0.6/ladda.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-WSM0N11F84"></script> -->
+        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-234646161-1"></script> -->
         <script>
           /*window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-WSM0N11F84');*/
+          gtag('config', 'UA-234646161-1');*/
         </script>
+
 
         <script src="{{ asset('public/assets/js/main.js') }}"></script>
     </body>

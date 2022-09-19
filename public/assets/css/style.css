@@ -18,6 +18,10 @@ body {
   overflow-x: hidden;
 }
 
+.none {
+  display: none;
+}
+
 .about-img {
   margin-left: -100px;
   right: -60px;
@@ -78,6 +82,15 @@ body {
     font-size: 50px;
   }
   .law-firm {
+    font-size: 50px;
+  }
+  .servicos{
+    font-size: 50px;
+  }
+  .clientes{
+    font-size: 50px;
+  }
+  .contato_titulo{
     font-size: 50px;
   }
 }

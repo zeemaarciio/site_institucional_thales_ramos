@@ -1,4 +1,5 @@
 (function ($) {
+    $(".alert").hide();
     "use strict";
 
     // Navbar on scrolling
@@ -27,30 +28,47 @@
         }
     });
 
-    // Modal Video
-    $(document).ready(function () {
-        var $videoSrc;
-        $('.btn-play').click(function () {
-            $videoSrc = $(this).data("src");
-        });
-        console.log($videoSrc);
-
-        $('#videoModal').on('shown.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
-        })
-
-        $('#videoModal').on('hide.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc);
-        })
-    });
-
-    // Testimonials carousel
+    // banner clientes
     $(".testimonial-carousel").owlCarousel({
         autoplay: true,
         smartSpeed: 1500,
         dots: true,
         loop: true,
         items: 1
+    });
+
+    $('.btn-enviar').click( function(event) {
+        var l= Ladda.create( document.querySelector( '.btn-enviar' ) );
+        l.start();
+        event.stopPropagation();
+        event.preventDefault();
+
+        var form = $('#contato');
+
+        $.ajax({
+            url: form.attr('action'),
+            type: form.attr('method'),
+            dataType: 'json',
+            data: form.serialize(),
+            success: function(data) {
+                l.stop();
+                if(data.status == true) {
+                    $(".alert").hide();
+                    swal({
+                      title: "Sucesso!",
+                      text: "Recebemos o seu contato!",
+                      icon: "success",
+                    });
+                    $('.swal-button').css("background-color", "green");
+                    form.trigger('reset');
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                //console.log(xhr.responseText);
+                l.stop();
+                $(".alert").show();
+            }
+        });
     });
     
 })(jQuery);
